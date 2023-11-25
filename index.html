@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grow Profit Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>GREEN HEART GROW PROFIT CALCULATOR</h1>
+      <div class="sub1">
+        <p>
+          Use this calculator monthly ♥ Use it to strategise and look at
+          different scenarios and opportunities for growth
+        </p>
+      </div>
+      <div class="sub2">
+        <p>
+          This cool tool gives you 5 growth opportunities VERSUSES 2 chances to
+          reduce your costs so there are no excuses for not growing!
+        </p>
+      </div>
+    </header>
+    <nav></nav>
+    <main>
+      <aside class="instructions">
+        <div class="numbers-needed">
+          <h3>You Will Need These Numbers To Fill In The Calculator</h3>
+          <ul>
+            <li>* Current Customers</li>
+            <li>* Customer Retention Rate (Do NOT enter % at the end)</li>
+            <li>* Number of New Opportunities</li>
+            <li>* Conversion Rate (Do NOT enter % at the end)</li>
+            <li>* Number of Transactions</li>
+            <li>* Average Transaction Value</li>
+            <li>* Cost of Sales</li>
+            <li>* Operatiing Expenses</li>
+          </ul>
+        </div>
+        <div class="white-field">
+          <h3>WHITE FIELDS - DO NOT use the DELETE or BACKSPACE keys</h3>
+          <p>
+            THESE FIELDS HAVE FORMULAS IN THEM THAT DO THE CALCULATIONS FOR YOU
+            - YOU COULD LOOSE THEM
+          </p>
+        </div>
+        <div class="grey-field">
+          <h3>GREY FIELD - FILL IN (Can use DELETE or BACKSPACE keys)</h3>
+          <p>
+            This is the starting field and the figure should be growing each
+            time you review it -> it is easier to promote to current customers
+            than new leads
+          </p>
+        </div>
+        <div class="green-field">
+          <h3>GREEN FIELDS - FILL IN (Can use DELETE or BACKSPACE keys)</h3>
+          <p>Need to Increase these Fields -> Test -> Grow</p>
+        </div>
+        <div class="red-field">
+          <h3>RED FIELDS - FILL IN (Can use DELETE or BACKSPACE keys)</h3>
+          <p>Need to Reduce these Fields -> Review -> Shrink</p>
+        </div>
+        <div class="other-numbers-needed">
+          <h3>Other Numbers You Might Want To Review</h3>
+          <ul>
+            <li>* Average Customer Value (ACV)</li>
+            <li>* Lifetime Customer Value (LCV)</li>
+            <li>* Cost Per Acquisition/Action (CPA)</li>
+            <li>* Allowable Acquisition Cost (AAC)</li>
+            <li>* Click Through Rate (CTR)</li>
+            <li>* Back-End Customer Value</li>
+            <li>* Profit/Loss Position</li>
+            <li>* Cashflow Position</li>
+            <li>* Break-Even</li>
+            <li>* Business Valuation</li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="calculator">
+        <div class="calc-item-container">
+          <div>
+            <div class="grey-field calc-item">
+              <label>Current Customers</label>
+              <input id="current-customers" type="text" onchange="getCurrentCus()" placeholder="0"/>
+            </div>
+            <div class="operator">X</div>
+          </div>
+        </div>
+
+        <div class="calc-item-container">
+          <div>
+            <div class="green-field calc-item">
+              <label>Number of New Opportunities</label>
+              <input id="new-opportunities" type="text" placeholder="0" onchange="getNewCus()"/>
+            </div>
+            <div class="operator">X</div>
+          </div>
+        </div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div class="calc-item-container">
+          <div>
+            <div class="green-field calc-item">
+              <label>Customer Retention Rate</label>
+              <input id="retention-rate" type="text" onchange="getRetRate()" placeholder="0%"/>
+            </div>
+            <div class="equal">=</div>
+          </div>
+        </div>
+
+        <div class="calc-item-container">
+          <div>
+            <div class="green-field calc-item">
+              <label>Customer Conversion Rate</label>
+              <input id="conversion-rate" type="text" placeholder="0%" onchange="getConvRate()"/>
+            </div>
+            <div class="equal">=</div>
+          </div>
+        </div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div class="calc-item-container">
+          <div>
+            <div class="white-field calc-item">
+              <label>Retained Customers</label>
+              <div id="retained-customers" class="result">0</div>
+            </div>
+          </div>
+          <div class="operator">+</div>
+        </div>
+
+        <div class="calc-item-container">
+          <div>
+            <div class="white-field calc-item">
+              <label>New Customers</label>
+              <div id="new-customers" class="result">0</div>
+            </div>
+          </div>
+          <div class="equal">=</div>
+        </div>
+
+        <div class="calc-item-container">
+          <div>
+            <div class="white-field calc-item">
+              <div>
+                <label>Total Number of Customers</label>
+                <div id="total-customers" class="result">0</div>
+              </div>
+            </div>
+            <div class="operator">X</div>
+          </div>
+        </div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div class="calc-item-container">
+          <div>
+            <div class="green-field calc-item">
+              <div>
+                <label>Number of Transactions</label>
+                <input id="transactions-amount" type="text" placeholder="0" onchange="getTransAmount()"/>
+              </div>
+            </div>
+            <div class="operator">X</div>
+          </div>
+        </div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div class="calc-item-container">
+          <div>
+            <div class="green-field calc-item">
+              <div>
+                <label>Average Transaction Value</label>
+                <input id="transaction-value" type="text" placeholder="$0" onchange="getTransValue()"/>
+              </div>
+            </div>
+            <div class="equal">=</div>
+          </div>
+        </div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div class="calc-item-container">
+          <div>
+            <div class="white-field calc-item">
+              <div>
+                <label>Sales</label>
+                <div id="sales" class="result">$0</div>
+              </div>
+            </div>
+          </div>
+          <div class="operator">-</div>
+        </div>
+
+        <div class="calc-item-container">
+          <div>
+            <div class="red-field calc-item">
+              <label>Cost of Sales</label>
+              <input id="cost-of-sales" type="text" placeholder="$0" onchange="getCostOfSales()" />
+            </div>
+          </div>
+          <div class="equal">=</div>
+        </div>
+
+        <div class="calc-item-container">
+          <div>
+            <div class="white-field calc-item">
+              <div>
+                <label>Gross profit</label>
+                <div id="gross-profit" class="result">$0</div>
+              </div>
+            </div>
+            <div class="operator">-</div>
+          </div>
+        </div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div class="calc-item-container">
+  
+          <div>
+            <div class="red-field calc-item">
+              <label>Operating expenses</label>
+              <input id="operating-expenses" type="text" placeholder="$0" onchange="getOperatingExpenses()"/>
+            </div>
+            <div class="equal">=</div>
+          </div>
+        </div>
+
+        
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div class="calc-item-container">
+          <div>
+            <div class="mediumgreen-field calc-item">
+              <div>
+                <label>Net Profit</label>
+                <div id="net-profit" class="result">$0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <div class="explanation-container">
+      <section class="number-explanation">
+        <h3>Information About These Numbers - Based on a Monthly Review</h3>
+        <ul>
+          <li>
+            <strong>* Current Customers</strong>
+            = Fill in the quantity of customers you currently have. If this is
+            the first time filling this in, the suggestion is to calculate the
+            last 12-months customer total -> the next time you review this, the
+            amount should be increasing.
+          </li>
+          <li>
+            <strong>* Customer Retention Rate %</strong>
+            = Calculate -> Retained Customers divided by Current Customers times
+            by 100% Example: 99 retained customers ￼110 current customers x 100%
+            = 90%
+          </li>
+          <li>
+            <strong> * Retained Customers</strong>
+            = Customers that stayed with the business during the month
+          </li>
+          <li>
+            <strong>* Number of New Leads</strong>
+            = How many new leads/prospects contacted you during the month?
+          </li>
+          <li>
+            <strong>* Conversion Rate %</strong>
+            = Before you can fill this in, you need to establish the business
+            goal -> is it calls, sales, sign-ups, downloads, form submissions
+            *Ask yourself: How do I know I have converted a customer? -> then
+            Calculate -> Number of Conversions based on business goals divided
+            by Number of New Leads/Prospects times by 100% Example: 34 sales
+            ￼new leads ￼ 100% = 15.3%
+          </li>
+          <li>
+            <strong>* New Customers</strong>
+            = How many new cusomers you aquired in the month based on the
+            conversion rate (business goal you decided on)
+          </li>
+          <li>
+            <strong>* Total Number of Customers</strong>
+            = As the calculation shows this is your total amount of customers
+            including retained + new.
+          </li>
+          <li>
+            <strong>* Number of Transactions</strong>
+            = In the month how many invoices did you generate?
+          </li>
+          <li>
+            <strong>* Average Transaction Value</strong>
+            = Calculate -> Total Sales $ divided by Total Number of Transactions
+          </li>
+          <li>
+            <strong>* Sales</strong>
+            How much money have you made in the month = YAY!
+          </li>
+          <li>
+            <strong>* Cost of Sales</strong>
+            = What total costs did you have to pay to generate these sales? Can
+            you reduce it?
+          </li>
+          <li>
+            <strong>* Gross Profit</strong>
+            = The money you generated after paying your costs.
+          </li>
+          <li>
+            <strong>* Operating Expenses</strong>
+            = What are the total business operating costs? Can you reduce it?
+          </li>
+          <li>
+            <strong>* Net Profit</strong>
+            = This is the final amount your business has generated AFTER Cost of
+            Sales and Operating Expenses. This amount should be growing every
+            time you review it.
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
