@@ -249,5 +249,16 @@ main {
     margin: auto;
     margin-top: 60px;
   }
+}
 
+@media (max-width: 400px) {
+  .calculator {
+    max-width: 375px;
+  }
+  .calc-row {
+    gap: 10px;
+  }
+  .calc-item {
+    max-width: 140px;
+  }
 }
