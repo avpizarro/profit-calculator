@@ -5,7 +5,7 @@
   --color-mediumgreen: #2fad71;
   --color-darkgreen: #30ac71;
   --color-grey: #d9d9d9;
-  --color-lightgreyblue: #d6dce5; 
+  --color-lightgreyblue: #d6dce5;
   --color-yellow: #ffff99;
   --color-white: #ffffff;
   --color-red: #ff5150;
@@ -65,8 +65,13 @@ ul {
 
 main {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 5fr 1fr;
   background: black;
+}
+
+.instructions {
+  min-width: 375px;
+  max-width: 375px;
 }
 
 .instructions h3 {
@@ -81,23 +86,23 @@ main {
   margin: 10px;
 }
 
-.instructions div p, .instructions div ul li {
+.instructions div p,
+.instructions div ul li {
   font-size: 19px;
   line-height: 1.5;
 }
 
 .calculator {
-
   display: grid;
-  grid-template-areas: 
-  "a a a a a"
-  "a a a a a"
-  "a a a a a"
-  "a a a a a"
-  "a a a a a"
-  "a a a a a"
-  "a a a a a"
-  "a a a a a";
+  grid-template-areas:
+    'a a a a a'
+    'a a a a a'
+    'a a a a a'
+    'a a a a a'
+    'a a a a a'
+    'a a a a a'
+    'a a a a a'
+    'a a a a a';
   place-items: center;
   gap: 10px;
   margin: 10px;
@@ -151,7 +156,8 @@ main {
   background: var(--color-white);
   padding: 30px;
   width: 90%;
-  margin: 30px;
+  min-width: 375px;
+  margin: auto;
   margin-top: 60px;
   line-height: 190%;
 }
@@ -167,7 +173,8 @@ main {
   margin-top: 15px;
 }
 
-.number-explanation ul li, .number-explanation ul li strong {
+.number-explanation ul li,
+.number-explanation ul li strong {
   font-size: 19px;
 }
 
@@ -199,6 +206,19 @@ main {
   background: var(--color-lightgreyblue);
 }
 
-
-
-
+@media (max-width: 375px) {
+  main {
+    grid-template-columns: 100%;
+  }
+  .calculator {
+    grid-template-areas:
+    'a a'
+    'a a'
+    'a a'
+    'a a'
+    'a a'
+    'a a'
+    'a a'
+    'a a';
+  }
+}
