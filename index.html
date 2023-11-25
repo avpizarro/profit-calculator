@@ -24,6 +24,176 @@
     </header>
     <nav></nav>
     <main>
+      
+      <section class="calculator">
+
+        <div class="calc-row">
+          <div class="calc-item-container">
+            <div>
+              <div class="grey-field calc-item">
+                <label>Current Customers</label>
+                <input id="current-customers" type="text" onchange="getCurrentCus()" placeholder="0"/>
+              </div>
+              <div class="operator">X</div>
+            </div>
+          </div>
+          
+          <div class="calc-item-container">
+            <div>
+              <div class="green-field calc-item">
+                <label>New Opportunities</label>
+                <input id="new-opportunities" type="text" placeholder="0" onchange="getNewCus()"/>
+              </div>
+              <div class="operator">X</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="calc-row">
+
+          <div class="calc-item-container">
+            <div>
+              <div class="green-field calc-item">
+                <label>Customer Retention Rate</label>
+                <input id="retention-rate" type="text" onchange="getRetRate()" placeholder="0%"/>
+              </div>
+              <div class="equal">=</div>
+            </div>
+          </div>
+        
+          <div class="calc-item-container">
+            <div>
+              <div class="green-field calc-item">
+                <label>Customer Conversion Rate</label>
+                <input id="conversion-rate" type="text" placeholder="0%" onchange="getConvRate()"/>
+              </div>
+              <div class="equal">=</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="calc-row">
+
+          <div class="calc-item-container">
+            <div>
+              <div class="white-field calc-item">
+                <label>Retained Customers</label>
+                <div id="retained-customers" class="result">0</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="operator middle-operator">+</div>
+
+          <div class="calc-item-container">
+            <div>
+              <div class="white-field calc-item">
+                <label>New Customers</label>
+                <div id="new-customers" class="result">0</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="calc-item-container">
+        <div class="equal">=</div>
+        </div>
+
+        <div class="calc-item-container calc-row-1">
+          <div>
+            <div class="white-field calc-item">
+              <div>
+                <label>Total Number of Customers</label>
+                <div id="total-customers" class="result">0</div>
+              </div>
+            </div>
+            <div class="operator">X</div>
+          </div>
+        </div>
+        
+        <div class="calc-item-container calc-row-1">
+          <div>
+            <div class="green-field calc-item">
+              <div>
+                <label>Number of Transactions</label>
+                <input id="transactions-amount" type="text" placeholder="0" onchange="getTransAmount()"/>
+              </div>
+            </div>
+            <div class="operator">X</div>
+          </div>
+        </div>
+        
+        <div class="calc-item-container calc-row-1">
+          <div>
+            <div class="green-field calc-item">
+              <div>
+                <label>Average Transaction Value</label>
+                <input id="transaction-value" type="text" placeholder="$0" onchange="getTransValue()"/>
+              </div>
+            </div>
+            <div class="equal">=</div>
+          </div>
+        </div>
+
+        <div class="calc-item-container calc-row-1">
+          <div>
+            <div class="white-field calc-item">
+              <div>
+                <label>Sales</label>
+                <div id="sales" class="result">$0</div>
+              </div>
+            </div>
+            <div class="operator">-</div>
+          </div>
+        </div>
+        
+        <div class="calc-item-container calc-row-1">
+          <div>
+            <div class="red-field calc-item">
+              <label>Cost of Sales</label>
+              <input id="cost-of-sales" type="text" placeholder="$0" onchange="getCostOfSales()" />
+            </div>
+            <div class="equal">=</div>
+          </div>
+        </div>
+        
+        <div class="calc-item-container calc-row-1">
+          <div>
+            <div class="white-field calc-item">
+              <div>
+                <label>Gross profit</label>
+                <div id="gross-profit" class="result">$0</div>
+              </div>
+            </div>
+            <div class="operator">-</div>
+          </div>
+        </div>
+
+        <div class="calc-item-container calc-row-1">
+          <div>
+            <div class="red-field calc-item">
+              <label>Operating expenses</label>
+              <input id="operating-expenses" type="text" placeholder="$0" onchange="getOperatingExpenses()"/>
+            </div>
+            <div class="equal">=</div>
+          </div>
+        </div>
+        
+        <div class="calc-item-container calc-row-1">
+          <div>
+            <div class="mediumgreen-field calc-item">
+              <div>
+                <label>Net Profit</label>
+                <div id="net-profit" class="result">$0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+      
       <aside class="instructions">
         <div class="numbers-needed">
           <h3>You Will Need These Numbers To Fill In The Calculator</h3>
@@ -77,195 +247,6 @@
           </ul>
         </div>
       </aside>
-
-      <section class="calculator">
-        <div class="calc-item-container">
-          <div>
-            <div class="grey-field calc-item">
-              <label>Current Customers</label>
-              <input id="current-customers" type="text" onchange="getCurrentCus()" placeholder="0"/>
-            </div>
-            <div class="operator">X</div>
-          </div>
-        </div>
-
-        <div class="calc-item-container">
-          <div>
-            <div class="green-field calc-item">
-              <label>Number of New Opportunities</label>
-              <input id="new-opportunities" type="text" placeholder="0" onchange="getNewCus()"/>
-            </div>
-            <div class="operator">X</div>
-          </div>
-        </div>
-
-        <div></div>
-        <div></div>
-        <div></div>
-
-        <div class="calc-item-container">
-          <div>
-            <div class="green-field calc-item">
-              <label>Customer Retention Rate</label>
-              <input id="retention-rate" type="text" onchange="getRetRate()" placeholder="0%"/>
-            </div>
-            <div class="equal">=</div>
-          </div>
-        </div>
-
-        <div class="calc-item-container">
-          <div>
-            <div class="green-field calc-item">
-              <label>Customer Conversion Rate</label>
-              <input id="conversion-rate" type="text" placeholder="0%" onchange="getConvRate()"/>
-            </div>
-            <div class="equal">=</div>
-          </div>
-        </div>
-
-        <div></div>
-        <div></div>
-        <div></div>
-
-        <div class="calc-item-container">
-          <div>
-            <div class="white-field calc-item">
-              <label>Retained Customers</label>
-              <div id="retained-customers" class="result">0</div>
-            </div>
-          </div>
-          <div class="operator">+</div>
-        </div>
-
-        <div class="calc-item-container">
-          <div>
-            <div class="white-field calc-item">
-              <label>New Customers</label>
-              <div id="new-customers" class="result">0</div>
-            </div>
-          </div>
-          <div class="equal">=</div>
-        </div>
-
-        <div class="calc-item-container">
-          <div>
-            <div class="white-field calc-item">
-              <div>
-                <label>Total Number of Customers</label>
-                <div id="total-customers" class="result">0</div>
-              </div>
-            </div>
-            <div class="operator">X</div>
-          </div>
-        </div>
-
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-
-        <div class="calc-item-container">
-          <div>
-            <div class="green-field calc-item">
-              <div>
-                <label>Number of Transactions</label>
-                <input id="transactions-amount" type="text" placeholder="0" onchange="getTransAmount()"/>
-              </div>
-            </div>
-            <div class="operator">X</div>
-          </div>
-        </div>
-
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-
-        <div class="calc-item-container">
-          <div>
-            <div class="green-field calc-item">
-              <div>
-                <label>Average Transaction Value</label>
-                <input id="transaction-value" type="text" placeholder="$0" onchange="getTransValue()"/>
-              </div>
-            </div>
-            <div class="equal">=</div>
-          </div>
-        </div>
-
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-
-        <div class="calc-item-container">
-          <div>
-            <div class="white-field calc-item">
-              <div>
-                <label>Sales</label>
-                <div id="sales" class="result">$0</div>
-              </div>
-            </div>
-          </div>
-          <div class="operator">-</div>
-        </div>
-
-        <div class="calc-item-container">
-          <div>
-            <div class="red-field calc-item">
-              <label>Cost of Sales</label>
-              <input id="cost-of-sales" type="text" placeholder="$0" onchange="getCostOfSales()" />
-            </div>
-          </div>
-          <div class="equal">=</div>
-        </div>
-
-        <div class="calc-item-container">
-          <div>
-            <div class="white-field calc-item">
-              <div>
-                <label>Gross profit</label>
-                <div id="gross-profit" class="result">$0</div>
-              </div>
-            </div>
-            <div class="operator">-</div>
-          </div>
-        </div>
-
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-
-        <div class="calc-item-container">
-  
-          <div>
-            <div class="red-field calc-item">
-              <label>Operating expenses</label>
-              <input id="operating-expenses" type="text" placeholder="$0" onchange="getOperatingExpenses()"/>
-            </div>
-            <div class="equal">=</div>
-          </div>
-        </div>
-
-        
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-
-        <div class="calc-item-container">
-          <div>
-            <div class="mediumgreen-field calc-item">
-              <div>
-                <label>Net Profit</label>
-                <div id="net-profit" class="result">$0</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </section>
     </main>
 
     <div class="explanation-container">

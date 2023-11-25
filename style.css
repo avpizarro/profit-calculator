@@ -5,7 +5,7 @@
   --color-mediumgreen: #2fad71;
   --color-darkgreen: #30ac71;
   --color-grey: #d9d9d9;
-  --color-lightgreyblue: #d6dce5; 
+  --color-lightgreyblue: #d6dce5;
   --color-yellow: #ffff99;
   --color-white: #ffffff;
   --color-red: #ff5150;
@@ -65,8 +65,13 @@ ul {
 
 main {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 5fr 1fr;
   background: black;
+}
+
+.instructions {
+  min-width: 375px;
+  max-width: 375px;
 }
 
 .instructions h3 {
@@ -81,34 +86,32 @@ main {
   margin: 10px;
 }
 
-.instructions div p, .instructions div ul li {
+.instructions div p,
+.instructions div ul li {
   font-size: 19px;
   line-height: 1.5;
 }
 
 .calculator {
-
   display: grid;
-  grid-template-areas: 
-  "a a a a a"
-  "a a a a a"
-  "a a a a a"
-  "a a a a a"
-  "a a a a a"
-  "a a a a a"
-  "a a a a a"
-  "a a a a a";
-  place-items: center;
-  gap: 10px;
+  grid-template-rows: 10;
   margin: 10px;
   margin-top: 60px;
   font-size: 19px;
 }
 
+.calc-row {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
 .calc-item-container {
-  display: grid;
-  grid-template-columns: 5fr 1fr;
-  place-items: center;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   height: 100%;
   width: 100%;
@@ -118,10 +121,33 @@ main {
 .calc-item {
   padding: 15px;
   min-height: 120px;
-  min-width: 200px;
+  width: clamp(140px, 200px, 300px)
 }
+
+.calc-row-1 .calc-item {
+  min-width: 300px;
+}
+
+.calc-item div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.calc-item label {
+  font-weight: 700;
+}
+
 .calculator div input {
   width: 90%;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  border-radius: 0px;
+  border: none;
+  padding: 5px;
+  margin-top: 30px;
 }
 
 .operator {
@@ -131,6 +157,11 @@ main {
   margin-top: 10px;
 }
 
+.middle-operator {
+  margin: auto;
+  font-size: 50px;
+}
+
 .equal {
   color: var(--color-mediumgreen);
   font-size: 50px;
@@ -138,7 +169,13 @@ main {
 }
 
 .result {
-  font-weight: bolder;
+  font-weight: 900;
+  width: 90%;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  border-radius: 0px;
+  border: none;
+  padding-top: 30px;
 }
 
 .explanation-container {
@@ -151,7 +188,8 @@ main {
   background: var(--color-white);
   padding: 30px;
   width: 90%;
-  margin: 30px;
+  min-width: 375px;
+  margin: auto;
   margin-top: 60px;
   line-height: 190%;
 }
@@ -167,7 +205,8 @@ main {
   margin-top: 15px;
 }
 
-.number-explanation ul li, .number-explanation ul li strong {
+.number-explanation ul li,
+.number-explanation ul li strong {
   font-size: 19px;
 }
 
@@ -199,6 +238,16 @@ main {
   background: var(--color-lightgreyblue);
 }
 
+@media (max-width: 800px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  .instructions {
+    width: 90%;
+    min-width: 90%;
+    max-width: 90%;
+    margin: auto;
+    margin-top: 60px;
+  }
 
-
-
+}
